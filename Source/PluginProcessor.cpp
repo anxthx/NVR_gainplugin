@@ -144,7 +144,12 @@ void NVR_GainPluginAudioProcessor::processBlock (juce::AudioBuffer<float>& buffe
     {
         auto* channelData = buffer.getWritePointer (channel);
 
-        // ..do something to the data...
+         for (int sample = 0; sample < buffer.getNumSamples(); ++sample) 
+        {
+            channelData[sample] = channelData[sample] * 0.1;
+
+        }
+
     }
 }
 
